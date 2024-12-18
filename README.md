@@ -1,160 +1,73 @@
-## Configuração do Ambiente Cloud9
+# **Métricas Sprint 5**
 
-### Passo 1: Criando o Ambiente no AWS Cloud9
+## **Artefatos Sprint 5**  
+Na sprint 5, gerimos no total **3 artefatos** que direcionaram o desenvolvimento e as entregas:  
+1. **Coleta de métricas**  
+2. **DesignOPs - Playbook**  
+3. **Report Executivo**  
 
-1. Acesse o AWS Cloud9 no Console da AWS em: [AWS Cloud9 Console](https://us-east-1.console.aws.amazon.com/cloud9/).
-
-<img width="506" alt="image" src="https://github.com/user-attachments/assets/2a3c3663-fb91-4852-971c-a84cb51563d8" />
-
-3. Clique em "Criar ambiente" e forneça um nome para o seu ambiente. Para este tutorial, o nome utilizado foi `ponderada09`.
-
-<img width="787" alt="image" src="https://github.com/user-attachments/assets/7bcb76c7-2938-438b-b61a-50047ac46c75" />
-
-4. Escolha o tipo de instância EC2 para o ambiente Cloud9:
-
-<img width="411" alt="image" src="https://github.com/user-attachments/assets/b6cd73b4-bfe0-4e03-9f56-44683a114c89" />
-
-   - Tipo de instância: **t2.micro** (1 GiB RAM + 1 vCPU) – recomendado para pequenos projetos e testes.
-6. Escolha a plataforma: **Amazon Linux 2023**.
-7. Defina o tempo de inatividade para hibernação automática: **30 minutos**.
-8. Configure as opções de rede e escolha **SSH** como a opção de conexão.
-9. Após confirmar todas as configurações, clique em "Criar ambiente" para iniciar a criação do ambiente.
-
-### Passo 2: Acessando o Ambiente
-
-- Após a criação, o ambiente estará listado na sua interface do AWS Cloud9. Clique em "Abrir" para acessar o ambiente de desenvolvimento.
-
-<img width="764" alt="image" src="https://github.com/user-attachments/assets/271e9aa3-55a8-476b-a62f-628b43a9d57f" />
-
-Claro! Aqui está o texto adaptado para parecer que foi você quem fez:
+O foco foi criar **tasks macro** para otimizar a produtividade, evitando retrabalho e garantindo o cumprimento das entregas. A divisão das tarefas permitiu que todos os membros do grupo trabalhassem de forma paralela em diferentes frentes.
 
 ---
 
-### Provisionando uma Instância EC2 na AWS com Terraform
+## **Coleta de Métricas**  
+![Coleta de Métricas](https://github.com/user-attachments/assets/6a0f4ac1-593f-4612-98e1-d0b69ac437a5)  
 
-**Introdução:**  
-Este tutorial tem como objetivo criar uma instância EC2 na AWS utilizando o Terraform, uma ferramenta de Infrastructure as Code (IaC) amplamente utilizada para automatizar a criação e o gerenciamento de infraestrutura em nuvem. O procedimento envolve a instalação do Terraform e da AWS CLI, além de configurar o AWS CLI para autenticação e definir uma instância EC2 básica no Terraform.
+A coleta de métricas foi executada de forma estruturada ao longo da sprint, com ferramentas que auxiliaram na automação e na precisão das informações geradas.
 
-#### **Requisitos:**
-Para seguir este tutorial, você precisará de:
+---
 
-- Terraform CLI (versão 1.2.0 ou superior)
-- AWS CLI instalada
-- Conta AWS com credenciais para criação de recursos
-- Acesso às credenciais IAM para autenticação via Terraform (configure as variáveis de ambiente `AWS_ACCESS_KEY_ID` e `AWS_SECRET_ACCESS_KEY`)
+## **DesignOPs - Playbook**  
+![DesignOPs Playbook](https://github.com/user-attachments/assets/56fe04f3-4b9d-4fc2-8239-1397702c03c3)  
 
-```bash
-export AWS_ACCESS_KEY_ID=seu_access_key
-export AWS_SECRET_ACCESS_KEY=seu_secret_key
-```
+O playbook serviu como um guia prático para padronização dos processos e acompanhamento do progresso.
 
-**Dica:**  
-Caso você não tenha as credenciais IAM, consulte a documentação do provedor AWS para autenticação alternativa.
+---
 
-#### **Passo 1: Criando o Diretório de Configuração**
-Primeiro, crie um diretório para armazenar seus arquivos de configuração do Terraform:
+## **Report Executivo**  
+![Report Executivo](https://github.com/user-attachments/assets/374024e9-9982-45ae-92cf-28cad3717e59)  
 
-```bash
-mkdir learn-terraform-aws-instance
-cd learn-terraform-aws-instance
-```
+O Report Executivo consolidou os principais resultados e desafios da sprint, apresentando uma visão objetiva e organizada do progresso.
 
-Em seguida, crie um arquivo `main.tf` para definir a infraestrutura.
+---
 
-```bash
-touch main.tf
-```
+## **Gráfico da Sprint 5**  
 
-Abra o arquivo `main.tf` no seu editor de texto e cole a seguinte configuração:
+**Início da Sprint:**
+### **Burndown Chart**  
+![Gráfico Burndown](https://github.com/user-attachments/assets/d0665bac-ba03-4e2f-8e13-4d4e6beb24e3)  
 
-```hcl
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
+**Início da Sprint:**
+### **Evolução ao Longo da Sprint**  
+![Evolução de Tarefas](https://github.com/user-attachments/assets/2ad0b486-4d49-479c-a9ec-e9939c38113f)  
 
-  required_version = ">= 1.2.0"
-}
+---
 
-provider "aws" {
-  region  = "us-west-2"
-}
+## **Análise dos Números**  
 
-resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
-  instance_type = "t2.micro"
+**Final da Sprint:**
+![image](https://github.com/user-attachments/assets/98282293-2907-4b90-bd04-7824357a0772)
 
-  tags = {
-    Name = "ExampleAppServerInstance"
-  }
-}
-```
+- **Tarefas Iniciais**: Definimos **11 tasks** no início da sprint.  
+- **Aumento de Escopo**: Durante a execução, percebemos a necessidade de criar **7 tasks extras** devido a pendências da sprint anterior. Isso elevou o total de tarefas para **18 tasks**.  
 
-#### **Passo 2: Inicializando o Diretório**
-Após criar a configuração, inicialize o diretório para baixar e instalar os provedores necessários (neste caso, o AWS provider):
+### **Burndown e Progresso**  
+- O **Ideal Trend** (linha cinza) representa o progresso esperado ao longo dos dias da sprint.  
+- O **Remaining** (área azul) mostra o esforço restante para a entrega das tarefas.  
 
-```bash
-terraform init
-```
+Como trabalhamos com **tasks macro**, demandamos mais tempo no desenvolvimento antes de movê-las para o status "Pronto". Por isso, o **Remaining** permaneceu estável por alguns dias e foi reduzido em blocos significativos próximos ao final da sprint.  
 
-<img width="824" alt="image" src="https://github.com/user-attachments/assets/c7306e91-6a0d-4460-93b2-793f659faa33" />
+- **Conclusão**: Conseguimos concluir **100% das tarefas** planejadas, mesmo com o aumento no escopo. Isso é comprovado pela linha de **Remaining** atingindo o ponto zero no final da sprint.  
 
-O Terraform irá instalar o provedor AWS e gerar um arquivo de bloqueio `.terraform.lock.hcl`.
+---
 
-<img width="154" alt="image" src="https://github.com/user-attachments/assets/a51c3df5-ff55-4b31-b06b-02e5d4d64c46" />
+## **Resultados**  
 
-#### **Passo 3: Formatando e Validando a Configuração**
-A formatação consistente do código é recomendada. Utilize o comando `terraform fmt` para garantir que o código esteja bem formatado.
+**Final da Sprint:**
+![image](https://github.com/user-attachments/assets/98282293-2907-4b90-bd04-7824357a0772)
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/5a3a5212-9ef5-45dd-a3b5-826eae6e540f" />
+1. **Total de Tarefas Entregues**: **18 tasks**  
+2. **Progresso Concluído**: **100%**  
+3. **Automação e Monitoramento**: A coleta e apresentação das métricas foram facilitadas por uso do **Azure**, resultando em gráficos claros e precisos.  
 
-```bash
-terraform fmt
-```
-
-Em seguida, valide a configuração para garantir que não haja erros de sintaxe ou inconsistências internas:
-
-<img width="296" alt="image" src="https://github.com/user-attachments/assets/725036cf-bebf-42f0-aca5-3fa660bea468" />
-
-```bash
-terraform validate
-```
-
-<img width="292" alt="image" src="https://github.com/user-attachments/assets/ac66a310-fd72-407b-9db3-25b6626d6f45" />
-
-#### **Passo 4: Criando a Infraestrutura**
-Agora que tudo está configurado, execute o comando `terraform apply` para criar a instância EC2 conforme definido no `main.tf`.
-
-```bash
-terraform apply
-```
-
-Terraform exibirá um plano de execução com as ações que serão realizadas. Quando o plano for aprovado, digite `yes` para confirmar a criação da instância.
-
-```bash
-Enter a value: yes
-```
-
-Terraform começará a criar a instância e, após alguns minutos, sua instância EC2 estará disponível.
-
-#### **Passo 5: Inspecionando o Estado**
-Após a criação da instância, o Terraform armazenará o estado da infraestrutura no arquivo `terraform.tfstate`. Para verificar o estado atual, utilize o comando:
-
-```bash
-terraform show
-```
-
-Isso exibirá detalhes da instância EC2 criada, incluindo informações como IP público e privado, ID da instância, entre outros.
-
-#### **Passo 6: Gerenciando a Infraestrutura**
-Agora que a infraestrutura está criada, você pode gerenciá-la com o Terraform. Para realizar modificações ou destruir a infraestrutura, use os comandos apropriados:
-
-- Para destruir os recursos criados:
-
-```bash
-terraform destroy
-```
-
+O acompanhamento diário e a divisão organizada de tarefas nos permitiram lidar com o aumento de escopo de forma eficiente, mantendo a qualidade e cumprindo todos os prazos definidos.  
