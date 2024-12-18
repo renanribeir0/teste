@@ -13,21 +13,15 @@ O foco foi criar **tasks macro** para otimizar a produtividade, evitando retraba
 ## **Coleta de Métricas**  
 ![Coleta de Métricas](https://github.com/user-attachments/assets/6a0f4ac1-593f-4612-98e1-d0b69ac437a5)  
 
-A coleta de métricas foi executada de forma estruturada ao longo da sprint, com ferramentas que auxiliaram na automação e na precisão das informações geradas.
-
 ---
 
 ## **DesignOPs - Playbook**  
 ![DesignOPs Playbook](https://github.com/user-attachments/assets/56fe04f3-4b9d-4fc2-8239-1397702c03c3)  
 
-O playbook serviu como um guia prático para padronização dos processos e acompanhamento do progresso.
-
 ---
 
 ## **Report Executivo**  
 ![Report Executivo](https://github.com/user-attachments/assets/374024e9-9982-45ae-92cf-28cad3717e59)  
-
-O Report Executivo consolidou os principais resultados e desafios da sprint, apresentando uma visão objetiva e organizada do progresso.
 
 ---
 
@@ -70,4 +64,5 @@ Como trabalhamos com **tasks macro**, demandamos mais tempo no desenvolvimento a
 2. **Progresso Concluído**: **100%**  
 3. **Automação e Monitoramento**: A coleta e apresentação das métricas foram facilitadas por uso do **Azure**, resultando em gráficos claros e precisos.  
 
-O acompanhamento diário e a divisão organizada de tarefas nos permitiram lidar com o aumento de escopo de forma eficiente, mantendo a qualidade e cumprindo todos os prazos definidos.  
+O acompanhamento diário e a divisão organizada de tarefas nos permitiram lidar com o aumento de escopo de forma eficiente, mantendo a qualidade e cumprindo todos os prazos definidos. Ao longo das sprints e das coletas de métricas, aprendemos a importância de uma **gestão de tempo mais eficiente**. Em diversos momentos do módulo, deixamos de atingir o objetivo ideal devido à falta de organização e planejamento no uso do tempo disponível. A utilização da **ferramenta Azure** foi fundamental para identificar esses gargalos, oferecendo visibilidade sobre o progresso das tarefas e permitindo ajustes necessários ao longo do processo.  
+
